@@ -7,7 +7,7 @@ public class RandomNumber {
 	private final int rangeHigh=100;
 	private final long seed=System.currentTimeMillis();
 	private final Random generator=new Random(seed);
-	public static int get() {
-		return (generator.nextInt(rangeHigh-rangeLow)+rangeLow);
+	public int get() {
+		return (generator.nextInt((rangeHigh-rangeLow)+1)+rangeLow);
 	}
 }

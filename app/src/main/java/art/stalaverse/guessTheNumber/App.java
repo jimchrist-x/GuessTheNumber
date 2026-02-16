@@ -66,18 +66,24 @@ public class App {
 						System.out.printf("Enter number (%d-%d): ", number.getRangeLow(), number.getRangeHigh());
 						if (reader.hasNextInt()) {
 							int guess=Integer.parseInt(reader.nextLine().trim());
-							if (guess>num) {
-								System.out.println("Lower!");
-								player.incrementGuesses();
-							}
-							else if (guess<num) {
-								System.out.println("Higher!");
-								player.incrementGuesses();
+							if (guess>=number.getRangeLow() && guess<=number.getRangeHigh()) {
+								if (guess>num) {
+									System.out.println("Lower!");
+									player.incrementGuesses();
+								}
+								else if (guess<num) {
+									System.out.println("Higher!");
+									player.incrementGuesses();
+								}
+								else {
+									player.incrementGuesses();
+									isFound=true;
+								}
 							}
 							else {
-								player.incrementGuesses();
-								isFound=true;
+								System.out.println("Number must be within the boundries!");
 							}
+							
 						}
 					} while (!isFound);
 					clearScreen();

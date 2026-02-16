@@ -10,4 +10,10 @@ public class RandomNumber {
 	public int get() {
 		return (generator.nextInt((rangeHigh-rangeLow)+1)+rangeLow);
 	}
+	public int getRangeLow() {
+		return this.rangeLow;
+	}
+	public int getRangeHigh() {
+		return this.rangeHigh;
+	}
 }

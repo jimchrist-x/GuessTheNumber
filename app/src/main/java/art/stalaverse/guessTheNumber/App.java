@@ -75,6 +75,7 @@ public class App {
 								player.incrementGuesses();
 							}
 							else {
+								player.incrementGuesses();
 								isFound=true;
 							}
 						}
